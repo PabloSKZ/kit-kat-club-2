@@ -34,3 +34,125 @@ Migrating to CreateItems (20200309135528)
   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
   [1m[36mItem Create (0.9ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "test"], ["description", "dhkjdhkh"], ["price", "5.0"], ["image_url", "http://"], ["created_at", "2020-03-09 13:58:53.192345"], ["updated_at", "2020-03-09 13:58:53.192345"]]
   [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (318.7ms)[0m  [1m[35mCREATE DATABASE "kit-kat-club-2_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (241.8ms)[0m  [1m[35mCREATE DATABASE "kit-kat-club-2_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3466896527833977525)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateUsers (20200309134527)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200309134527_devise_create_users.rb:5
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20200309134527_devise_create_users.rb:39
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/migrate/20200309134527_devise_create_users.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200309134527"]]
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateItems (20200309135528)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "items" ("id" bigserial primary key, "title" character varying, "description" text, "price" decimal, "image_url" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200309135528_create_items.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200309135528"]]
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-03-09 14:43:20.092303"], ["updated_at", "2020-03-09 14:43:20.092303"]]
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3466896527833977525)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mItem Create (0.8ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Munch"], ["description", "[\"Vinyl kombucha paleo bitters photo booth cardigan lumbersexual.\", \"Diy sartorial five dollar toast scenester chartreuse park tousled everyday.\", \"Cornhole pinterest marfa carry occupy.\"]"], ["price", "17.0"], ["image_url", "https://www.latranchee.com/wp-content/uploads/2017/03/cute-cat.jpg"], ["created_at", "2020-03-09 14:54:41.775537"], ["updated_at", "2020-03-09 14:54:41.775537"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mItem Create (0.2ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Chagall"], ["description", "[\"Jean shorts heirloom humblebrag raw denim.\", \"Authentic vegan fingerstache flexitarian scenester tattooed helvetica.\", \"Letterpress marfa cray.\"]"], ["price", "8.0"], ["image_url", "https://www.latranchee.com/wp-content/uploads/2017/03/cute-cat.jpg"], ["created_at", "2020-03-09 14:54:41.779849"], ["updated_at", "2020-03-09 14:54:41.779849"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mItem Create (0.2ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Escher"], ["description", "[\"Taxidermy hashtag yuccie small batch swag crucifix keffiyeh.\", \"Pork belly cronut banjo literally letterpress xoxo selfies.\", \"Cliche flexitarian flannel trust fund retro.\"]"], ["price", "19.0"], ["image_url", "https://www.latranchee.com/wp-content/uploads/2017/03/cute-cat.jpg"], ["created_at", "2020-03-09 14:54:41.783595"], ["updated_at", "2020-03-09 14:54:41.783595"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Durer"], ["description", "[\"Mixtape pbr&b food truck slow-carb tousled farm-to-table.\", \"Asymmetrical poutine scenester try-hard dreamcatcher.\", \"Williamsburg normcore narwhal swag cornhole.\"]"], ["price", "13.0"], ["image_url", "https://www.latranchee.com/wp-content/uploads/2017/03/cute-cat.jpg"], ["created_at", "2020-03-09 14:54:41.787349"], ["updated_at", "2020-03-09 14:54:41.787349"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Kandinsky"], ["description", "[\"Fanny pack pug chia hella.\", \"Irony hammock health.\", \"Gentrify cray poutine banh mi paleo yuccie cardigan fingerstache.\"]"], ["price", "12.0"], ["image_url", "https://www.latranchee.com/wp-content/uploads/2017/03/cute-cat.jpg"], ["created_at", "2020-03-09 14:54:41.790417"], ["updated_at", "2020-03-09 14:54:41.790417"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Vettriano"], ["description", "[\"Banh mi drinking readymade ramps kinfolk etsy vice pour-over.\", \"Echo deep v mlkshk yr godard.\", \"Fixie cred ramps flexitarian before they sold out kombucha synth skateboard.\"]"], ["price", "11.0"], ["image_url", "https://www.latranchee.com/wp-content/uploads/2017/03/cute-cat.jpg"], ["created_at", "2020-03-09 14:54:41.793247"], ["updated_at", "2020-03-09 14:54:41.793247"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Paul Klee"], ["description", "[\"Before they sold out cred mumblecore loko.\", \"Phlogiston drinking mixtape scenester.\", \"Tumblr cold-pressed goth fixie ethical wolf drinking kombucha.\"]"], ["price", "16.0"], ["image_url", "https://www.latranchee.com/wp-content/uploads/2017/03/cute-cat.jpg"], ["created_at", "2020-03-09 14:54:41.796382"], ["updated_at", "2020-03-09 14:54:41.796382"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Edward Hopper"], ["description", "[\"Pinterest fashion axe semiotics typewriter yuccie cronut.\", \"Loko cold-pressed fashion axe freegan fixie hella art party.\", \"Tofu pug taxidermy authentic retro try-hard etsy brooklyn.\"]"], ["price", "14.0"], ["image_url", "https://www.latranchee.com/wp-content/uploads/2017/03/cute-cat.jpg"], ["created_at", "2020-03-09 14:54:41.800243"], ["updated_at", "2020-03-09 14:54:41.800243"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Cassatt"], ["description", "[\"Chambray shabby chic street.\", \"Artisan venmo green juice poutine cray.\", \"Pickled kale chips lomo iphone migas.\"]"], ["price", "15.0"], ["image_url", "https://www.latranchee.com/wp-content/uploads/2017/03/cute-cat.jpg"], ["created_at", "2020-03-09 14:54:41.803950"], ["updated_at", "2020-03-09 14:54:41.803950"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Joan Miro"], ["description", "[\"Ennui kitsch trust fund microdosing pickled.\", \"Sartorial mlkshk banjo slow-carb chartreuse gentrify goth.\", \"Pinterest gastropub pork belly flannel single-origin coffee.\"]"], ["price", "17.0"], ["image_url", "https://www.latranchee.com/wp-content/uploads/2017/03/cute-cat.jpg"], ["created_at", "2020-03-09 14:54:41.807771"], ["updated_at", "2020-03-09 14:54:41.807771"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "john@gmail.com"], ["encrypted_password", "$2a$11$9iW.CYu8XXz7ol0ESiSZFuYmjG19ikmMCL7Zqy6yOJ1mixG5QFAaK"], ["created_at", "2020-03-09 14:59:37.645689"], ["updated_at", "2020-03-09 14:59:37.645689"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
