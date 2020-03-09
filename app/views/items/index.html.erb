@@ -1,0 +1,22 @@
+<h1>Items#index</h1>
+<p>Find me in app/views/items/index.html.erb</p>
+
+<div class="container">
+  <div class="row">
+  <% @items.each do |item| %>
+  <>
+  <div class="card mb-3" style="width:15rem;">
+    <h3 class="card-header"><%= item.title =%></h3>
+    <img style="height: 180px; width: 100%; display: block;" src="<%= item.image_url =%>" alt="Card image">
+    <div class="card-body">
+      <p class="card-text"><%= item.description =%></p>
+      <hr>
+      <h4 class="card-text font-weight-bold"><%= item.price =%>€</h4>
+    </div>
+    <div class="card-footer text-muted text-center" >
+      <a href="#" class="btn btn-primary">Add to cart</a>
+    </div>
+  </div>
+  <% end %>
+  </div>
+</div>
