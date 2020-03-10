@@ -10,8 +10,13 @@
       <img style="height: auto; width: 100%; display: block;" src="<%= item.image_url =%>" alt="Card image">
       <div class="card-body">
         <p class="card-text"><%= truncate(item.description.tr('[\"\"]',''), :length => 50)  =%></p>
+        <%= link_to "En voir plus", item_path(item.id) %>
         <hr>
-        <h4 class="card-text font-weight-bold"><%= item.price =%>€</h4>
+        <% if item.price % 1 == 0 %>
+          <h4 class="card-text font-weight-bold"><%= number_with_precision(item.price, precision: 0) =%>€</h4>
+        <% else %>
+          <h4 class="card-text font-weight-bold"><%= item.price =%>€</h4>
+        <% end %>
       </div>
       <div class="card-footer text-muted text-center" >
         <a href="#" class="btn btn-primary">Ajouter au panier</a>
