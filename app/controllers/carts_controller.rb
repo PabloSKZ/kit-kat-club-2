@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
   def show
+    @items = Cart.last.items
   end
 
   def create
