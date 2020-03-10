@@ -3,9 +3,7 @@
       <div class="row justify-content-center">
           <div class="col-md-8">
               <div class="card">
-                  <div class="card-header text-white bg-dark">
-                    <h2 class="text-center">Créer un compte</h2>
-                  </div>
+                    <div class="card-header text-white bg-secondary">Créer un compte</div>
                   <div class="card-body">
                     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
                     <%= render "devise/shared/error_messages", resource: resource %>
@@ -33,6 +31,7 @@
                         <% end %>
                         <br>
                         <%= render "devise/shared/links", class: "mx-5 text-center" %>
+                      </div>
                       </div>
                   </div>
                 </div>
