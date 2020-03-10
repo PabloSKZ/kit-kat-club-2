@@ -1,37 +1,36 @@
-<h2>Forgot your password?</h2>
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
-
-
+<br>
 <nav>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md">
                 <div class="card">
-                    <div class="card-header text-white bg-primary">Mot de passe oublié ?</div>
-                    # <div class="card-body">
-                        <div class="col-md">
-                        <form class="card mt-4">
-                    <div class="form-group"> <label for="email-for-pass">Enter your email address</label> <input class="form-control" type="text" id="email-for-pass" required=""><small class="form-text text-muted">Enter the email address you used during the registration on BBBootstrap.com. Then we'll email a link to this address.</small> </div>
-                </div>
-                <div class="card-footer"> <button class="btn btn-success" type="submit">Get New Password</button> <button class="btn btn-danger" type="submit">Back to Login</button> </div>
-            </form>
-		</div>  
-    </div>
+                    <div class="card-header text-white bg-secondary">Mot de passe oublié ?</div>
+                    <div class="card-body">
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+
+  <div class="form-group row ">
+  <div class="col-md-10">
+  <div class="form-group"> <label for="email-for-pass">Entrez votre adresse email</label> <input class="form-control" type="text" id="email-for-pass" required="">
+  </div>
+  </div>
+  </div>
+
+  <div class="col-md-6 offset-md-4">
+  <div class="actions">
+    <%= f.submit "Obtenir un nouveau mot de passe", class:"btn btn-primary"%>
+  </div>
+<% end %>
+</div>
+<%= render "devise/shared/links" %>
+
+</div>  
+</div>  
+</div>
 </div>        
 </div>  
 </div>
 </nav>
+
