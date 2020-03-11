@@ -15,15 +15,15 @@ class CartsController < ApplicationController
   end
 
 
-  private 
-
+  private
   def cart_total_price
     @cart = Cart.find(current_user.cart.id)
-    @price = 0
-    @cart.items.each do |i|
-      price += i.price
+    @price = 0 
+
+    @cart.join_table_items_carts.each do |i|
+      @price += i.quantity * Item.find(i.item_id).price
     end
-    puts price
+    return @price
   end
   
 end
