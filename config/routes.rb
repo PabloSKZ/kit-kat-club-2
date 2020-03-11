@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   
-  resources :carts, except: [:index, :new, :edit] do 
-    resources :join_table_items_carts, only: [:create, :update, :destroy]
-  end
+  resources :carts, except: [:index, :new, :edit]
+  resources :join_table_items_carts, only: [:create, :update, :destroy]
   devise_for :users
   root 'home#index'
   resources :items

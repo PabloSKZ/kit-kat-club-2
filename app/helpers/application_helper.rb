@@ -5,10 +5,5 @@ module ApplicationHelper
     end
   end
 
-  def destroy_item
-    @jt = JoinTableItemsCart.find(params[:id])
-    @jt.destroy
-
-    redirect_to cart_path(current_user.cart.id)
-  end
+  
 end

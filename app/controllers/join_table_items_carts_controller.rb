@@ -16,5 +16,9 @@ class JoinTableItemsCartsController < ApplicationController
   end
 
   def destroy
+    @line_item = JoinTableItemsCart.find(params[:id])
+    @line_item.destroy
+
+    redirect_to cart_path(current_user.cart.id)
   end
 end
