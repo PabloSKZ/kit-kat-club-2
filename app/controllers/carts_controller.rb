@@ -14,10 +14,15 @@ class CartsController < ApplicationController
   end
 
   def destroy
+    @cart = current_user.cart
+    @item = Item.find(params[:id])
+    @cart.join_table_items_carts.find_by(item_id: @item).delete
+
+    redirect_to cart_path(@cart)
   end
 
-
   private
+
   def cart_total_price
     @cart = Cart.find(current_user.cart.id)
     @price = 0 
