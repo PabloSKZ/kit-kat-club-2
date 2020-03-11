@@ -41,6 +41,22 @@ ActiveRecord::Schema.define(version: 2020_03_10_153545) do
     t.index ["item_id"], name: "index_join_table_items_carts_on_item_id"
   end
 
+  create_table "join_table_items_orders", force: :cascade do |t|
+    t.bigint "order_id"
+    t.bigint "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_join_table_items_orders_on_item_id"
+    t.index ["order_id"], name: "index_join_table_items_orders_on_order_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
