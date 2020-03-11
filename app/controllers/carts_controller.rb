@@ -1,4 +1,6 @@
 class CartsController < ApplicationController
+  include ApplicationHelper
+
   def show
     @cart_subtotal = cart_total_price
   end
