@@ -1,6 +1,10 @@
 class CartsController < ApplicationController
   def show
     @cart_subtotal = cart_total_price
+    @quantity = []
+    @cart.join_table_items_carts.each do |i|
+      @quantity << i.quantity
+    end
   end
 
   def create
