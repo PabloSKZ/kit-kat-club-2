@@ -8,7 +8,7 @@
           <h4 class="card-text font-weight-bold"><%= @item.price =%>€</h4>
         </div>
         <div class="card-footer text-muted text-center" >
-          <%= link_to 'Ajouter au panier', join_table_items_carts_path(params[:id]), method: :create, class: "btn btn-primary" %>
+          <%= link_to 'Ajouter au panier', cart_join_table_items_carts_path(params[:id]), method: :create, class: "btn btn-primary" %>
           <%= hidden_field(:id, :token) %>
         </div>
       </div>  
