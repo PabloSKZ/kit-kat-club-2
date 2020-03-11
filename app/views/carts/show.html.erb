@@ -10,21 +10,26 @@
         </thead>
         <tbody>
         <% @cart.items.each do |i| %>
-        <% j = 0 %>
           <tr>
-            <th scope="row"><%= i.title %></th>
-            <td><%= i.price %></td>
-            <td><%= @quantity[j] %></td>
+            <td scope="row"><%= i.title %></th>
+            <td><%= i.join_table_items_carts.find_by(item_id:i.id).quantity %> </td>
+            <td><%= i.price * i.join_table_items_carts.find_by(item_id:i.id).quantity %> €</td>
           </tr>
-          <% j += 1 %>
         <% end %>
         </tbody>
+        <thead>
+            <tr>
+                <th scope="col">Total</th>
+                <% total_quantity = 0 %>
+                <% total_price = 0 %>
+                <% @cart.items.each do |i| %>
+                    <% total_quantity += i.join_table_items_carts.find_by(item_id:i.id).quantity %>
+                    <% total_price += i.price * i.join_table_items_carts.find_by(item_id:i.id).quantity %> 
+                <% end %>
+                <th><%= total_quantity %></th>
+                <th><%= total_price %> €</th>
+            </tr>
+        </thead>
       </table>
 </div>
-
-<ul class="list-group">
-    
-    <li class="list-group-item"></li>
-    
-</ul>
 

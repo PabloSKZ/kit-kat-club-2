@@ -5,6 +5,8 @@ class CartsController < ApplicationController
     @cart.join_table_items_carts.each do |i|
       @quantity << i.quantity
     end
+    puts "$" * 60
+    print @quantity
   end
 
   def create
