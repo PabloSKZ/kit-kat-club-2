@@ -14,6 +14,7 @@
             <td scope="row"><%= i.title %></th>
             <td><%= i.join_table_items_carts.find_by(item_id:i.id).quantity %> </td>
             <td><%= i.price * i.join_table_items_carts.find_by(item_id:i.id).quantity %> €</td>
+            <td><%= link_to 'x', join_table_items_carts_path, method: :destroy, class: "btn btn-danger" %></td>
           </tr>
         <% end %>
         </tbody>
@@ -31,5 +32,8 @@
             </tr>
         </thead>
       </table>
+      <div class="text-center">
+         <%= link_to 'Passer la commande', carts_path, method: :show, class: "btn btn-success my-5" %>
+    </div>
 </div>
 
