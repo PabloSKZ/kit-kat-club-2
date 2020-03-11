@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
   def show
-    @items = current_user.cart.items
+    @cart_subtotal = cart_total_price
   end
 
   def create
@@ -13,4 +13,17 @@ class CartsController < ApplicationController
 
   def destroy
   end
+
+
+  private
+  def cart_total_price
+    @cart = Cart.find(current_user.cart.id)
+    @price = 0 
+
+    @cart.join_table_items_carts.each do |i|
+      @price += i.quantity * Item.find(i.item_id).price
+    end
+    return @price
+  end
+  
 end
