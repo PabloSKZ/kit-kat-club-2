@@ -1,1 +1,39 @@
-<h1><%= @cart_subtotal %></h1>
+<h1 class="text-center my-5">Votre Panier</h1>
+<div class="container mt-5">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Produit</th>
+            <th scope="col">Quantité</th>
+            <th scope="col">Prix</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @cart.items.each do |i| %>
+          <tr>
+            <td scope="row"><%= i.title %></th>
+            <td><%= i.join_table_items_carts.find_by(item_id:i.id).quantity %> </td>
+            <td><%= i.price * i.join_table_items_carts.find_by(item_id:i.id).quantity %> €</td>
+            <td><%= link_to 'x', join_table_items_carts_path, method: :destroy, class: "btn btn-danger" %></td>
+          </tr>
+        <% end %>
+        </tbody>
+        <thead>
+            <tr>
+                <th scope="col">Total</th>
+                <% total_quantity = 0 %>
+                <% total_price = 0 %>
+                <% @cart.items.each do |i| %>
+                    <% total_quantity += i.join_table_items_carts.find_by(item_id:i.id).quantity %>
+                    <% total_price += i.price * i.join_table_items_carts.find_by(item_id:i.id).quantity %> 
+                <% end %>
+                <th><%= total_quantity %></th>
+                <th><%= total_price %> €</th>
+            </tr>
+        </thead>
+      </table>
+      <div class="text-center">
+         <%= link_to 'Passer la commande', carts_path, method: :show, class: "btn btn-success my-5" %>
+    </div>
+</div>
+
