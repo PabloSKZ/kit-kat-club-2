@@ -4,4 +4,6 @@ module ApplicationHelper
         cart = Cart.create(user: current_user)
     end
   end
+
+  
 end

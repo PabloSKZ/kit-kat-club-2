@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_03_10_153545) do
+=======
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 2020_03_11_134805) do
+=======
+ActiveRecord::Schema.define(version: 2020_03_10_153545) do
+>>>>>>> cart-back
+>>>>>>> d2548d3370341b94644f967965d08940b5522fb4
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"

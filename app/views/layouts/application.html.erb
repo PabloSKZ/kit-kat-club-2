@@ -51,7 +51,7 @@
           Mon compte
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <%= link_to "Mon panier", new_user_session_path, class: 'dropdown-item' %>
+          <%= link_to "Mon panier", cart_path(current_user.cart.id), class: 'dropdown-item' %>
           <%= link_to "Se deconnecter", destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
         </div>
       </div>
