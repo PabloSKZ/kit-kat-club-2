@@ -14,12 +14,12 @@
  *= require_self
  */
 
- footer {
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
 
 a {
     color: gray;
+}
+
+.page-footer{
+    position: fixed;
+    bottom: 0;
 }
