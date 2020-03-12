@@ -33,7 +33,7 @@
         </thead>
       </table>
       <div class="text-center">
-        <%= link_to 'Passer la commande', carts_path, method: :show, class: "btn btn-success my-5" %>
+        <%= link_to 'Passer la commande', charges_path(:price => total_price), method: :new, class: "btn btn-success my-5" %>
     </div>
 </div>
 
