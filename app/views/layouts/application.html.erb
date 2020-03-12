@@ -25,15 +25,6 @@
         <li class="nav-item active">
         <%= link_to 'Accueil', root_path, class: 'nav-link' %>
         </li>
-        <li class="nav-item">
-        <%= link_to 'Photos', items_path, class: 'nav-link' %>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
       </ul>
       <% if !user_signed_in? %>
       <div class="dropdown">
@@ -64,5 +55,50 @@
     <%= yield %>
   </body>
 
+
+ <!-- Footer -->
+<footer class="page-footer font-small pt-4g", style="background-color: #74C5D1; height: 90px;">
+
+  <!-- Footer Links -->
+  <div class="container-fluid text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-12 mt-md-0 mt-3">
+
+        <!-- Content -->
+        <center>
+        <%=image_tag('Kit-Kat Logo-Positive.png', class: "d-inline-block align-top logo-small", style: "margin-right: 10px;")%>
+      </center>
+        <p class="text-center", style="color: white;">Les meilleures photos de chats de tous les temps !</p>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+</footer>
+<!-- Footer -->
 
 </html>

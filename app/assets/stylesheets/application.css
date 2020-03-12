@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+
+a {
+    color: gray;
+}
+
+.page-footer {
+    position: fixed;
+    bottom: 0;
+    padding-top: 15px;
+}
+
+.logo-small {
+    width: 90px;
+    height: auto;
+}
