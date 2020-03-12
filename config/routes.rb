@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :join_table_items_carts, only: [:create, :update, :destroy]
   devise_for :users
   root 'home#index'
-  resources :items
+  resources :items do
+    resources :pictures, only: [:create]
+  end
   resources :charges
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

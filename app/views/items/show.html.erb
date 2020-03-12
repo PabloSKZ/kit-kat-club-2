@@ -1,15 +1,26 @@
 <div class='container' style="margin-top: 5rem;">
       <div class="card mb-5" style="width:80%; margin: auto;">
         <h3 class="card-header"><%= @item.title =%></h3>
-        <img style="height: auto; width: 100%; display: block;" src="<%= @item.image_url =%>" alt="Card image">
+        <%if @item.picture.attached?%>
+          <%= image_tag @item.picture, alt: 'cat_photo', style:'height:30rem' %>
+        <%else%>
+          <img style="height: 30rem; width: 100%; display: block;" src="<%= @item.image_url =%>" alt="Card image">
+        <%end%>
+        
         <div class="card-body">
           <p class="card-text"><%= @item.description.tr('[\"\"]','') =%></p>
           <hr>
           <h4 class="card-text font-weight-bold"><%= @item.price =%>€</h4>
         </div>
         <div class="card-footer text-muted text-center" >
-          <%= link_to 'Ajouter au panier', cart_join_table_items_carts_path(params[:id]), method: :create, class: "btn btn-primary" %>
+          <%= link_to 'Ajouter au panier', join_table_items_carts_path(params[:id]), method: :create, class: "btn btn-primary" %>
           <%= hidden_field(:id, :token) %>
         </div>
+        <% if current_user != nil && current_user.admin ==  true %>
+          <%= form_tag item_pictures_path(@item), multipart: true do %>
+            <%= file_field_tag :picture %>
+            <%= submit_tag "uploader l'image" %>
+          <% end %> 
+        <% end %>
       </div>  
 </div>
