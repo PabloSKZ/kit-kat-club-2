@@ -1,24 +1,7 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<h1>Kit-kat-club-2</h1>
+<strong>Bienvenue sur notre projet de groupe : Kit-kat-club-2 (Ne demandez pas ce qui est arrive au premier...)</strong>
+Infos importantes :
+<ul>
+  <li>Le lien de notre application en prod: http://kit-kat-club-2.herokuapp.com/</li>
+  <li>Pour la tester en local: naviguez dans la console jusqu'au dossier de notre app, executez <code>bundle install</code>, <code>rails db:create</code>, <code>rails db:migrate</code>, et enfin <code>rails db:seed</code>. Lancez ensuite un serveur local avec <code>rails s</code> et rendez-vous sur http://localhost:3000.</li>
+  <li>Notre equipe de reve: <a href="https://github.com/PabloSKZ">Pablo</a>, <a href="https://github.com/Nazaninf24">Nazanin</a>, <a href="https://github.com/Stovenn">Jonathan</a>, <a href="https://github.com/ArnoTnDev">Arnaud</a>, et le meilleur pour la fin: <a href="https://github.com/Cheltonne">Chelton</a>
