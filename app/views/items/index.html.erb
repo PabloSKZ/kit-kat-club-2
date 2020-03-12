@@ -7,7 +7,12 @@
   <div class="col-md-4  d-flex justify-content-around">
     <div class="card mb-5" style="width:20rem;">
       <h3 class="card-header"><%= item.title =%></h3>
-      <img style="height: auto; width: 100%; display: block;" src="<%= item.image_url =%>" alt="Card image">
+      <%if item.picture.attached?%>
+          <%= image_tag item.picture, alt: 'cat_photo', style:'height:12rem' %>
+        <%else%>
+          <img style="height:12rem; width: 100%; display: block;" src="<%= item.image_url =%>" alt="Card image">
+        <%end%>
+      
       <div class="card-body">
         <p class="card-text"><%= truncate(item.description.tr('[\"\"]',''), :length => 50)  =%></p>
         <%= link_to "En voir plus", item_path(item.id) %>

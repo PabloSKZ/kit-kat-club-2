@@ -26,6 +26,9 @@
                             <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
                           </div>
                       </div>
+                          <div class="col-md-6">
+                            <%= f.hidden_field :admin, :value => false, class: "form-control" %>
+                          </div>
                       <div class="col-md-6 offset-md-4">
                         <%= f.submit "Créer un compte", class: "btn btn-primary mx-5" %>
                         <% end %>
