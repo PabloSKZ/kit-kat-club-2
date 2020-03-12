@@ -19,7 +19,13 @@ a {
     color: gray;
 }
 
-.page-footer{
+.page-footer {
     position: fixed;
     bottom: 0;
+    padding-top: 15px;
+}
+
+.logo-small {
+    width: 90px;
+    height: auto;
 }
