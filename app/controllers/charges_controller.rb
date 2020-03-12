@@ -18,6 +18,8 @@ class ChargesController < ApplicationController
       description: 'Rails Stripe customer',
       currency: 'eur',
     })
+
+    Order.create(user_id: current_user.id)
   
   rescue Stripe::CardError => e
     flash[:error] = e.message

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Merci pour votre commande !</h1>
+    <p>
+      Télécharge tes images ici : 
+        <% @cart.each do |i| %>
+        <br>
+        <%= i %>
+        <% end %>
+    </p>
+    <p> À très vite sur Kit Kat Club !</p>
+  </body>
+</html>
