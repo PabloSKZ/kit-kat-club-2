@@ -10,4 +10,4 @@
   Item.create(title: Faker::Artist.name, description: Faker::Hipster.sentences, price: rand(5..20), image_url: "https://www.latranchee.com/wp-content/uploads/2017/03/cute-cat.jpg")
 end
 
-User.create!(email: 'john@gmail.com', password: 'topsecret', password_confirmation: 'topsecret')
+User.create!(email: 'adminkitkat@yopmail.com', password: 'topsecret', password_confirmation: 'topsecret', admin: true)
